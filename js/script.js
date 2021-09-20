@@ -2,7 +2,7 @@ const keyElem = document.querySelector('#key');
 const keyCodeElem = document.querySelector('#keyCode');
 
 const logg = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     
     console.log(e);
     
