@@ -1,3 +1,5 @@
+const keyElem = document.querySelector('#key');
+const keyCodeElem = document.querySelector('#keyCode');
 
 const logg = (e) => {
     e.preventDefault();
@@ -7,9 +9,12 @@ const logg = (e) => {
 
     const key = e.key;
     const code = e.keyCode;
-    let test = e.code;
+    // let test = e.code;
 
-    console.log(`Pressed: ${key} | KeyCode: ${code} | test: ${test}`);
+    keyElem.innerText = `${key}`;
+    keyCodeElem.innerText = `${code}`;
+
+    // console.log(`Pressed: ${key} | KeyCode: ${code} | test: ${test}`);
 }
 
 document.addEventListener('keydown', logg);
