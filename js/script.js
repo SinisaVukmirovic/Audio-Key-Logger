@@ -17,4 +17,5 @@ const logg = (e) => {
     // console.log(`Pressed: ${key} | KeyCode: ${code} | test: ${test}`);
 }
 
+document.addEventListener('keydown', (e) => e.preventDefault());
 document.addEventListener('keyup', logg);
