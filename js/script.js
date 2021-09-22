@@ -1,8 +1,10 @@
 const keyElem = document.querySelector('#key');
 const keyCodeElem = document.querySelector('#keyCode');
 
-const logg = (e) => {
+const loggPressedKey = (e) => {
     console.log(e);    
+    keyElem.classList.remove('js-keyPressAnim');
+    keyCodeElem.classList.remove('js-keyPressAnim');
 
     let key = e.key;
     let code = e.keyCode;
@@ -13,8 +15,15 @@ const logg = (e) => {
 
     keyElem.innerText = `${key}`;
     keyCodeElem.innerText = `${code}`;
-
+    
+    setTimeout(() => {        
+        keyElem.classList.add('js-keyPressAnim');
+        keyCodeElem.classList.add('js-keyPressAnim');
+    }, 20);
 }
 
-document.addEventListener('keydown', (e) => e.preventDefault());
-document.addEventListener('keyup', logg);
+document.addEventListener('keydown', e => {
+    e.preventDefault();;
+});
+
+document.addEventListener('keyup', loggPressedKey);
