@@ -22,6 +22,7 @@ h1 {
 #keyCode {
     opacity: .3;
     position: relative;
+    text-transform: capitalize;
 }
 
 #key {
@@ -34,5 +35,13 @@ h1 {
 #key.js-keyPressAnim,
 #keyCode.js-keyPressAnim {
     opacity: 1;
+    animation: scaling 200ms ease-in;
+    transform-origin: bottom;
     transition: all 200ms ease-in;
+}
+
+@keyframes scaling {
+    0% { transform: scale(.7); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
