@@ -15,7 +15,7 @@ h1 {
 .app {
     display: grid;
     place-items: center;
-    margin: auto;
+    text-align: center;
 }
 
 #key,

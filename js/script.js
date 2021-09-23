@@ -7,13 +7,14 @@ const loggPressedKey = (e) => {
     let key = e.key;
     let code = e.keyCode;
     
-    if (code === 32) {
-        key = 'Space';
-    }
+    // Handling Space key
+    if (code === 32) key = 'Space';
     
-    playAudio(key);
+    
     
     populatedElems(key, code);
+
+    playAudio(key);
     
     setTimeout(() => {        
         addAnimationClass();
@@ -35,6 +36,14 @@ const populatedElems = (key, code) => {
 }
 
 const playAudio = (key) => {
+    // handling keys without audio
+    if (key === ';') key = 'semicolon';
+    if (key === '.') key = 'dot';
+    if (key === ',') key = 'comma';
+    if (key === "'") key = 'apostrophe';
+    if (key === '[') key = 'opening square brackets';
+    if (key === ']') key = 'closing square brackets';
+    
     const utterance = new SpeechSynthesisUtterance(key);
     speechSynthesis.speak(utterance);
 }
