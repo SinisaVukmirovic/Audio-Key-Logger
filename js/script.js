@@ -3,14 +3,16 @@ const keyCodeElem = document.querySelector('#keyCode');
 
 const loggPressedKey = (e) => { 
     removeAnimationClass();
-
+    
     let key = e.key;
     let code = e.keyCode;
-
+    
     if (code === 32) {
         key = 'Space';
     }
-
+    
+    playAudio(key);
+    
     populatedElems(key, code);
     
     setTimeout(() => {        
@@ -32,10 +34,15 @@ const populatedElems = (key, code) => {
     keyCodeElem.innerText = code;
 }
 
+const playAudio = (key) => {
+    const utterance = new SpeechSynthesisUtterance(key);
+    speechSynthesis.speak(utterance);
+}
+
 removeAnimationClass();
 
 document.addEventListener('keydown', e => {
-    e.preventDefault();;
+    e.preventDefault();
 });
 
 document.addEventListener('keyup', loggPressedKey);
