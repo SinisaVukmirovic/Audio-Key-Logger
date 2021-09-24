@@ -45,3 +45,11 @@ h1 {
     80% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+#muteBtn {
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    background-color: coral;
+    border-radius: 50%;
+    cursor: pointer;
+}

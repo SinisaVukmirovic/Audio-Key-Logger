@@ -1,5 +1,6 @@
 const keyElem = document.querySelector('#key');
 const keyCodeElem = document.querySelector('#keyCode');
+const muteBtn = document.querySelector('#muteBtn')
 
 const loggPressedKey = (e) => { 
     removeAnimationClass();
@@ -14,6 +15,7 @@ const loggPressedKey = (e) => {
     
     populatedElems(key, code);
 
+    
     playAudio(key);
     
     setTimeout(() => {        
@@ -36,7 +38,7 @@ const populatedElems = (key, code) => {
 }
 
 const playAudio = (key) => {
-    // handling keys without audio
+    // handling keys without audio on default MS Anna voice
     if (key === ';') key = 'semicolon';
     if (key === '.') key = 'dot';
     if (key === ',') key = 'comma';
