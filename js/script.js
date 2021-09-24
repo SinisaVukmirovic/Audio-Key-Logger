@@ -1,6 +1,8 @@
-const keyElem = document.querySelector('#key');
-const keyCodeElem = document.querySelector('#keyCode');
-const muteBtn = document.querySelector('#muteBtn');
+const app = document.querySelector('.app');
+
+const keyElem = app.querySelector('#key');
+const keyCodeElem = app.querySelector('#keyCode');
+const muteBtn = app.querySelector('#muteBtn');
 
 let audioOn = true;
 
@@ -9,8 +11,6 @@ const loggPressedKey = (e) => {
     
     let key = e.key;
     let code = e.keyCode;
-    
-    populatedElems(key, code);
 
     // Handling Space key
     if (code === 32) key = 'Space';
@@ -18,6 +18,8 @@ const loggPressedKey = (e) => {
     if (audioOn) {
         playAudio(key);
     }
+
+    populatedElems(key, code);
     
     setTimeout(() => {        
         addAnimationClass();
