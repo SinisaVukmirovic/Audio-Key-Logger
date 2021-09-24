@@ -1,6 +1,8 @@
 const keyElem = document.querySelector('#key');
 const keyCodeElem = document.querySelector('#keyCode');
-const muteBtn = document.querySelector('#muteBtn')
+const muteBtn = document.querySelector('#muteBtn');
+
+let audioOn = true;
 
 const loggPressedKey = (e) => { 
     removeAnimationClass();
@@ -8,15 +10,14 @@ const loggPressedKey = (e) => {
     let key = e.key;
     let code = e.keyCode;
     
-    // Handling Space key
-    if (code === 32) key = 'Space';
-    
-    
-    
     populatedElems(key, code);
 
-    
-    playAudio(key);
+    // Handling Space key
+    if (code === 32) key = 'Space';
+
+    if (audioOn) {
+        playAudio(key);
+    }
     
     setTimeout(() => {        
         addAnimationClass();
@@ -50,6 +51,12 @@ const playAudio = (key) => {
     speechSynthesis.speak(utterance);
 }
 
+const muteAudio = () => {
+    audioOn = !audioOn;
+}
+
+muteBtn.addEventListener('click', muteAudio);
+
 removeAnimationClass();
 
 document.addEventListener('keydown', e => {
@@ -57,4 +64,3 @@ document.addEventListener('keydown', e => {
 });
 
 document.addEventListener('keyup', loggPressedKey);
-
