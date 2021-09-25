@@ -47,9 +47,10 @@ h1 {
 }
 
 #muteBtn {
-    width: 3rem;
+    margin-top: 3rem;
+    /* width: 3rem;
     aspect-ratio: 1 / 1;
     background-color: coral;
-    border-radius: 50%;
+    border-radius: 50%; */
     cursor: pointer;
 }
