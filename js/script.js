@@ -53,10 +53,16 @@ const playAudio = (key) => {
     speechSynthesis.speak(utterance);
 }
 
+const toggleAudioBtn = () => {
+    if (!audioOn) muteBtn.src = './icons/audio-off.svg';
+    if (audioOn) muteBtn.src = './icons/audio-on.svg';
+}
+
 const muteAudio = () => {
     audioOn = !audioOn;
 }
 
+muteBtn.addEventListener('click', toggleAudioBtn);
 muteBtn.addEventListener('click', muteAudio);
 
 removeAnimationClass();
