@@ -6,6 +6,9 @@ const muteBtn = app.querySelector('#muteBtn');
 
 let audioOn = true;
 
+const iconAudioOn = './icons/audio-on.svg';
+const iconAudioOff = './icons/audio-off.svg';
+
 const loggPressedKey = (e) => { 
     removeAnimationClass();
     
@@ -41,6 +44,8 @@ const populatedElems = (key, code) => {
 }
 
 const playAudio = (key) => {
+    speechSynthesis.cancel();
+
     // handling keys without audio on default MS Anna voice
     if (key === ';') key = 'semicolon';
     if (key === '.') key = 'dot';
@@ -54,8 +59,8 @@ const playAudio = (key) => {
 }
 
 const toggleAudioBtn = () => {
-    if (!audioOn) muteBtn.src = './icons/audio-off.svg';
-    if (audioOn) muteBtn.src = './icons/audio-on.svg';
+    if (!audioOn) muteBtn.src = iconAudioOff;
+    if (audioOn) muteBtn.src = iconAudioOn;
 }
 
 const muteAudio = () => {
