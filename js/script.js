@@ -4,12 +4,16 @@ const keyElem = app.querySelector('#key');
 const keyCodeElem = app.querySelector('#keyCode');
 const muteBtn = app.querySelector('#muteBtn');
 
+const infoElem = document.querySelector('.info');
+
 let audioOn = true;
 
 const iconAudioOn = './icons/audio-on.svg';
 const iconAudioOff = './icons/audio-off.svg';
 
-const loggPressedKey = (e) => { 
+const loggPressedKey = (e) => {
+    app.style.display = 'grid';
+    infoElem.style.visibility = 'hidden';
     removeAnimationClass();
     
     let key = e.key;
@@ -70,7 +74,7 @@ const muteAudio = () => {
 muteBtn.addEventListener('click', toggleAudioBtn);
 muteBtn.addEventListener('click', muteAudio);
 
-removeAnimationClass();
+// removeAnimationClass();
 
 document.addEventListener('keydown', e => {
     e.preventDefault();

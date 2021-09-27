@@ -1,8 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid lime; */
+}
+
 body {
     background-color: #222;
     color: #eee;
     font-family: sans-serif;
-    font-size: 2rem;
     max-height: 100vh;
     margin-top: 5rem;
 }
@@ -13,8 +19,20 @@ h1 {
 }
 
 .app {
-    display: grid;
+    display: none;
     place-items: center;
+    text-align: center;
+    box-shadow: 1px 1px 5px 5px #111;
+    padding: 2rem;
+    max-width: 40rem;
+    margin: auto;
+}
+    .app > * {
+        margin: 2rem;
+    }
+
+.info {
+    visibility: visible;
     text-align: center;
 }
 
@@ -26,10 +44,12 @@ h1 {
 }
 
 #key {
-    font-size: 5rem;
+    font-size: 4rem;
+    color: #ddd;
 }
 #keyCode {
     font-size: 2rem;
+    color: #aaa;
 }
 
 #key.js-keyPressAnim,
@@ -47,10 +67,13 @@ h1 {
 }
 
 #muteBtn {
-    margin-top: 3rem;
-    /* width: 3rem;
-    aspect-ratio: 1 / 1;
-    background-color: coral;
-    border-radius: 50%; */
+    /* margin: 3rem auto 1rem;   */
+    padding: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #111;
     cursor: pointer;
+    translate: transform 500ms linear;
 }
+    #muteBtn.audioOff {
+        transform: scale(.98);
+    }
