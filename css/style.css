@@ -15,26 +15,28 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
+    margin: 2rem;
+}
+
+.info {
+    visibility: visible;
+    text-align: center;
+    color: cyan;
 }
 
 .app {
     display: none;
     place-items: center;
     text-align: center;
-    box-shadow: 1px 1px 5px 5px #111;
-    padding: 2rem;
+    box-shadow: 1px 1px 3px 3px #111;
+    padding-top: 2rem;
     max-width: 40rem;
     margin: auto;
 }
     .app > * {
         margin: 2rem;
     }
-
-.info {
-    visibility: visible;
-    text-align: center;
-}
 
 #key,
 #keyCode {
@@ -67,13 +69,14 @@ h1 {
 }
 
 #muteBtn {
-    /* margin: 3rem auto 1rem;   */
     padding: 1.5rem;
     border-radius: 50%;
-    border: 2px solid #111;
+    border: 1px solid #111;
+    box-shadow: 2px 2px 3px 3px #111;
     cursor: pointer;
     translate: transform 500ms linear;
 }
     #muteBtn.audioOff {
-        transform: scale(.98);
+        transform: scale(.95);
+        box-shadow: 1px 1px 1px 1px #111;
     }

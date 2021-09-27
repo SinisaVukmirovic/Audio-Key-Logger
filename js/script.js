@@ -63,8 +63,14 @@ const playAudio = (key) => {
 }
 
 const toggleAudioBtn = () => {
-    if (!audioOn) muteBtn.src = iconAudioOff;
-    if (audioOn) muteBtn.src = iconAudioOn;
+    if (!audioOn) {
+        muteBtn.src = iconAudioOff;
+        muteBtn.classList.remove('audioOff');
+    }
+    if (audioOn) {
+        muteBtn.src = iconAudioOn;
+        muteBtn.classList.add('audioOff');
+    }
 }
 
 const muteAudio = () => {
