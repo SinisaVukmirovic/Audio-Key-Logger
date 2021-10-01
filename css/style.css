@@ -72,11 +72,11 @@ h1 {
     padding: 1.5rem;
     border-radius: 50%;
     border: 1px solid #111;
-    box-shadow: 2px 2px 3px 3px #111;
+    box-shadow: 2px 2px 5px 2px #111;
     cursor: pointer;
     translate: transform 500ms linear;
 }
     #muteBtn.audioOff {
         transform: scale(.95);
-        box-shadow: 1px 1px 1px 1px #111;
+        box-shadow: 0 0 2px 2px #111;
     }
