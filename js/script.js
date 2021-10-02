@@ -12,7 +12,7 @@ const iconAudioOn = './icons/audio-on.svg';
 const iconAudioOff = './icons/audio-off.svg';
 
 const loggPressedKey = (e) => {
-    app.style.display = 'grid';
+    // app.style.display = 'grid';
     infoElem.style.visibility = 'hidden';
     removeAnimationClass();
     
@@ -77,8 +77,8 @@ const muteAudio = () => {
     audioOn = !audioOn;
 }
 
-muteBtn.addEventListener('click', toggleAudioBtn);
-muteBtn.addEventListener('click', muteAudio);
+// muteBtn.addEventListener('click', toggleAudioBtn);
+// muteBtn.addEventListener('click', muteAudio);
 
 // removeAnimationClass();
 
