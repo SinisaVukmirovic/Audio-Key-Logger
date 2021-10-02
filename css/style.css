@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&display=swap');
+
+:root {
+    --appFont: 'Bebas Neue', sans-serif;
+    --audioBtnFont: 'Audiowide', sans-serif;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,21 +15,31 @@
 body {
     background-color: #222;
     color: #eee;
-    font-family: sans-serif;
+    font-family: var(--appFont);
+    font-size: 1.5rem; 
     max-height: 100vh;
     margin-top: 5rem;
 }
 
 h1 {
     text-align: center;
-    font-size: 3rem;
-    margin: 2rem;
+    font-size: 3.5rem;
+    margin: 1rem;
+    /* word-spacing: -10px; */
 }
+    h1 span {
+        color: #000;
+        background-color: cyan;
+        padding: .25rem .5rem 0;
+        border-radius: .75rem;
+    }
 
 .info {
     visibility: visible;
     text-align: center;
+    font-family: sans-serif;
     color: cyan;
+    font-size: 1rem;
 }
 
 .app {
@@ -31,28 +48,32 @@ h1 {
     place-items: center;
     text-align: center;
     box-shadow: 1px 1px 3px 3px #111;
-    padding-top: 2rem;
-    max-width: 40rem;
-    margin: auto;
+    padding: 1rem;
+    max-width: 30rem;
+    margin: 3rem auto 0;
 }
     .app > * {
-        margin: 2rem;
+        margin: 1rem;
+    }
+    .app > div > p {
+        opacity: .8;
     }
 
 #key,
 #keyCode {
-    opacity: .3;
+    opacity: .2;
     position: relative;
     text-transform: capitalize;
+    margin: .75rem;
 }
 
 #key {
-    font-size: 4rem;
-    color: #ddd;
+    font-size: 5rem;
+    color: #eee;
 }
 #keyCode {
-    font-size: 2rem;
-    color: #aaa;
+    font-size: 2.75rem;
+    color: cyan;
 }
 
 #key.js-keyPressAnim,
@@ -84,4 +105,34 @@ h1 {
 
 .audio-control {
     display: flex;
+    align-items: center;
+    font-family: var(--audioBtnFont);
+    transition: color 500ms ease-in-out;
 }
+    .audio-control p {
+        opacity: .4;
+        font-size: .8rem;
+    }
+    .audio-control .active {
+        color: cyan;
+        opacity: 1;
+    }
+    
+
+.toogle-btn {
+    width: 2.75rem;
+    height: 1.5rem;
+    padding: 4px;
+    margin: .75rem;
+    background-color: #000;
+    outline: 2px solid cyan;
+    display: flex;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+    .toogle-btn span {
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: cyan;
+        border-radius: 10rem;
+    }
