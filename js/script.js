@@ -1,15 +1,16 @@
 const app = document.querySelector('.app');
+const infoElem = document.querySelector('.info');
 
 const keyElem = app.querySelector('#key');
 const keyCodeElem = app.querySelector('#keyCode');
-const muteBtn = app.querySelector('#muteBtn');
+const toggleBtn = app.querySelector('#toggleBtn');
+// const muteBtn = app.querySelector('#muteBtn');
 
-const infoElem = document.querySelector('.info');
 
 let audioOn = true;
 
-const iconAudioOn = './icons/audio-on.svg';
-const iconAudioOff = './icons/audio-off.svg';
+// const iconAudioOn = './icons/audio-on.svg';
+// const iconAudioOff = './icons/audio-off.svg';
 
 const loggPressedKey = (e) => {
     // app.style.display = 'grid';
@@ -63,13 +64,19 @@ const playAudio = (key) => {
 }
 
 const toggleAudioBtn = () => {
+    // const toggleHandle = toggleBtn.querySelector('#toggleHandle');
+
     if (!audioOn) {
-        muteBtn.src = iconAudioOff;
-        muteBtn.classList.remove('audioOff');
+        toggleBtn.classList.toggle('audio-off');
+        // toggleHandle.style.transform = 'translateX(100%)';
+        // muteBtn.src = iconAudioOff;
+        // muteBtn.classList.remove('audioOff');
     }
     if (audioOn) {
-        muteBtn.src = iconAudioOn;
-        muteBtn.classList.add('audioOff');
+        toggleBtn.classList.toggle('audio-off');
+
+        // muteBtn.src = iconAudioOn;
+        // muteBtn.classList.add('audioOff');
     }
 }
 
@@ -79,6 +86,8 @@ const muteAudio = () => {
 
 // muteBtn.addEventListener('click', toggleAudioBtn);
 // muteBtn.addEventListener('click', muteAudio);
+toggleBtn.addEventListener('click', toggleAudioBtn);
+toggleBtn.addEventListener('click', muteAudio);
 
 // removeAnimationClass();
 

@@ -18,7 +18,7 @@
 
 body {
     background-color: var(--bgDark);
-    color: #eee;
+    color: #ddd;
     font-family: var(--appFont);
     font-size: 1.5rem; 
     max-height: 100vh;
@@ -68,7 +68,7 @@ h1 {
 #keyCode {
     position: relative;
     text-transform: capitalize;
-    margin: .75rem;
+    margin: .25rem auto .75rem;
 }
 
 #key {
@@ -82,11 +82,16 @@ h1 {
     opacity: .25;
 }
 
-#key.js-keyPressAnim,
-#keyCode.js-keyPressAnim {
+#key.js-keyPressAnim  {
     opacity: 1;
     animation: scaling 200ms ease-in;
     transform-origin: bottom;
+    transition: all 200ms ease-in;
+}
+#keyCode.js-keyPressAnim {
+    opacity: 1;
+    /* animation: scaling 200ms ease-in; */
+    /* transform-origin: bottom; */
     transition: all 200ms ease-in;
 }
 
@@ -125,7 +130,7 @@ h1 {
     }
     
 
-.toogle-btn {
+#toggleBtn {
     width: 2.75rem;
     height: 1.5rem;
     padding: 4px;
@@ -136,9 +141,16 @@ h1 {
     border-radius: 10rem;
     cursor: pointer;
 }
-    .toogle-btn span {
+    #toggleBtn #toggleHandle {
         height: 100%;
         aspect-ratio: 1 / 1;
         background-color: cyan;
         border-radius: 10rem;
+        transition: transform 200ms ease-in-out;
     }
+
+#toggleBtn.audio-off #toggleHandle {
+    transform: translateX(120%);
+    /* outline: 2px solid red; */
+    /* display: none; */
+}
