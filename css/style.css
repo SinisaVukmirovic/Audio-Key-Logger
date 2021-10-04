@@ -6,6 +6,8 @@
     --bgDark: #232323;
     /* --bgDark: #010b15; */
     --bgApp: #121212;
+    --fontClr: #ccc;
+    --titleClr: #eee;
     /* --bgApp: #031020; */
 }
 
@@ -18,7 +20,7 @@
 
 body {
     background-color: var(--bgDark);
-    color: #ddd;
+    /* color: #ddd; */
     font-family: var(--appFont);
     font-size: 1.5rem; 
     max-height: 100vh;
@@ -29,6 +31,7 @@ h1 {
     text-align: center;
     font-size: 3.5rem;
     margin: 1rem;
+    color: var(--titleClr);
     /* word-spacing: -10px; */
 }
     h1 span {
@@ -51,6 +54,7 @@ h1 {
     /* display: none; */
     place-items: center;
     text-align: center;
+    color: var(--fontClr);
     background-color: var(--bgApp);
     box-shadow: 1px 1px 3px 3px #111;
     padding: 1rem;
@@ -84,7 +88,7 @@ h1 {
 
 #key.js-keyPressAnim  {
     opacity: 1;
-    animation: scaling 200ms ease-in;
+    animation: scaling 200ms ease-in forwards;
     transform-origin: bottom;
     transition: all 200ms ease-in;
 }
@@ -148,9 +152,8 @@ h1 {
         border-radius: 10rem;
         transition: transform 200ms ease-in-out;
     }
-
-#toggleBtn.audio-off #toggleHandle {
-    transform: translateX(120%);
-    /* outline: 2px solid red; */
-    /* display: none; */
-}
+    #toggleBtn.js-audio-off #toggleHandle {
+        transform: translateX(120%);
+        /* outline: 2px solid red; */
+        /* display: none; */
+    }

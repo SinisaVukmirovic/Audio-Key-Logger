@@ -6,7 +6,6 @@ const keyCodeElem = app.querySelector('#keyCode');
 const toggleBtn = app.querySelector('#toggleBtn');
 // const muteBtn = app.querySelector('#muteBtn');
 
-
 let audioOn = true;
 
 // const iconAudioOn = './icons/audio-on.svg';
@@ -67,13 +66,13 @@ const toggleAudioBtn = () => {
     // const toggleHandle = toggleBtn.querySelector('#toggleHandle');
 
     if (!audioOn) {
-        toggleBtn.classList.toggle('audio-off');
+        toggleBtn.classList.toggle('js-audio-off');
         // toggleHandle.style.transform = 'translateX(100%)';
         // muteBtn.src = iconAudioOff;
         // muteBtn.classList.remove('audioOff');
     }
     if (audioOn) {
-        toggleBtn.classList.toggle('audio-off');
+        toggleBtn.classList.toggle('js-audio-off');
 
         // muteBtn.src = iconAudioOn;
         // muteBtn.classList.add('audioOff');
