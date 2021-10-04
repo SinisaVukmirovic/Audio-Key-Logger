@@ -3,6 +3,10 @@
 :root {
     --appFont: 'Bebas Neue', sans-serif;
     --audioBtnFont: 'Audiowide', sans-serif;
+    --bgDark: #232323;
+    /* --bgDark: #010b15; */
+    --bgApp: #121212;
+    /* --bgApp: #031020; */
 }
 
 * {
@@ -13,7 +17,7 @@
 }
 
 body {
-    background-color: #222;
+    background-color: var(--bgDark);
     color: #eee;
     font-family: var(--appFont);
     font-size: 1.5rem; 
@@ -47,6 +51,7 @@ h1 {
     /* display: none; */
     place-items: center;
     text-align: center;
+    background-color: var(--bgApp);
     box-shadow: 1px 1px 3px 3px #111;
     padding: 1rem;
     max-width: 30rem;
@@ -61,7 +66,6 @@ h1 {
 
 #key,
 #keyCode {
-    opacity: .2;
     position: relative;
     text-transform: capitalize;
     margin: .75rem;
@@ -70,10 +74,12 @@ h1 {
 #key {
     font-size: 5rem;
     color: #eee;
+    opacity: .15;
 }
 #keyCode {
     font-size: 2.75rem;
     color: cyan;
+    opacity: .25;
 }
 
 #key.js-keyPressAnim,
