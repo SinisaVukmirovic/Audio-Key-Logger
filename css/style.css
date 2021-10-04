@@ -3,12 +3,13 @@
 :root {
     --appFont: 'Bebas Neue', sans-serif;
     --audioBtnFont: 'Audiowide', sans-serif;
-    --bgDark: #232323;
+    --bgDark: #171717;
     /* --bgDark: #010b15; */
     --bgApp: #121212;
     --fontClr: #ccc;
     --titleClr: #eee;
     /* --bgApp: #031020; */
+    --boxShadow: 0 0 3px 2px #000;
 }
 
 * {
@@ -56,7 +57,7 @@ h1 {
     text-align: center;
     color: var(--fontClr);
     background-color: var(--bgApp);
-    box-shadow: 1px 1px 3px 3px #111;
+    box-shadow: var(--boxShadow);
     padding: 1rem;
     max-width: 30rem;
     margin: 3rem auto 0;
@@ -125,7 +126,7 @@ h1 {
     transition: color 500ms ease-in-out;
 }
     .audio-control p {
-        opacity: .4;
+        opacity: .5;
         font-size: .8rem;
     }
     .audio-control .active {

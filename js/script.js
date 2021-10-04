@@ -5,6 +5,7 @@ const keyElem = app.querySelector('#key');
 const keyCodeElem = app.querySelector('#keyCode');
 const toggleBtn = app.querySelector('#toggleBtn');
 // const muteBtn = app.querySelector('#muteBtn');
+const audioControlElem = app.querySelector('.audio-control');
 
 let audioOn = true;
 
@@ -64,16 +65,24 @@ const playAudio = (key) => {
 
 const toggleAudioBtn = () => {
     // const toggleHandle = toggleBtn.querySelector('#toggleHandle');
+    const audioLabels = audioControlElem.querySelectorAll('p');
+    audioLabels.forEach(label => label.classList.toggle('active'));
 
     if (!audioOn) {
         toggleBtn.classList.toggle('js-audio-off');
+
+        // audioLabels[0].classList.remove('active');
+        // audioLabels[1].classList.add('active');
         // toggleHandle.style.transform = 'translateX(100%)';
         // muteBtn.src = iconAudioOff;
         // muteBtn.classList.remove('audioOff');
     }
     if (audioOn) {
         toggleBtn.classList.toggle('js-audio-off');
-
+        
+        // audioLabels[1].classList.remove('active');
+        // audioLabels[0].classList.add('active');
+        // audioLabels[0].classList.toggle('active');
         // muteBtn.src = iconAudioOn;
         // muteBtn.classList.add('audioOff');
     }
