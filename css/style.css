@@ -4,14 +4,11 @@
     --appFont: 'Bebas Neue', sans-serif;
     --audioBtnFont: 'Audiowide', sans-serif;
     --bgDark: #171717;
-    /* --bgDark: #010b15; */
-    /* --bgApp: #121212; */
     --bgApp: rgba(0,0,0,.7);
     --blur: blur(5px);
     --theme-clr: cyan;
     --fontClr: #eee;
     --titleClr: #eee;
-    /* --bgApp: #031020; */
     --boxShadow: 1px 1px 3px 2px #000,
                 -1px -1px 3px 2px #000;
 }
@@ -20,17 +17,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* outline: 1px solid lime; */
 }
 
 body {
     min-height: 100vh;
-    /* background-color: var(--bgDark); */
-    background-image: url("../imgs/dark.jpg");
+    background-image: url("../imgs/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    /* color: #ddd; */
     font-family: var(--appFont);
     font-size: 1.5rem; 
     margin-top: 5rem;
@@ -41,7 +35,6 @@ h1 {
     font-size: 3.5rem;
     margin: 1rem;
     color: var(--titleClr);
-    /* word-spacing: -10px; */
 }
     h1 span {
         color: #000;
@@ -66,9 +59,9 @@ h1 {
     backdrop-filter: var(--blur);
     color: var(--fontClr);
     box-shadow: var(--boxShadow);
-    padding: 1rem;
+    padding: 1.5rem;
     max-width: 30rem;
-    margin: 3rem auto 0;
+    margin: 2rem auto 0;
 }
     .app > div {
         margin: .5rem;
@@ -103,8 +96,6 @@ h1 {
 }
 #keyCode.js-keyPressAnim {
     opacity: 1;
-    /* animation: scaling 200ms ease-in; */
-    /* transform-origin: bottom; */
     transition: all 200ms ease-in;
 }
 
@@ -131,7 +122,6 @@ h1 {
                     -1px -1px 10px var(--theme-clr);
     }
     
-
 #toggleBtn {
     width: 2.75rem;
     height: 1.5rem;
@@ -152,6 +142,4 @@ h1 {
     }
     #toggleBtn.js-audio-off #toggleHandle {
         transform: translateX(120%);
-        /* outline: 2px solid red; */
-        /* display: none; */
     }
