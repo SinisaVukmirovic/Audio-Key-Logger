@@ -5,11 +5,15 @@
     --audioBtnFont: 'Audiowide', sans-serif;
     --bgDark: #171717;
     /* --bgDark: #010b15; */
-    --bgApp: #121212;
-    --fontClr: #ccc;
+    /* --bgApp: #121212; */
+    --bgApp: rgba(0,0,0,.7);
+    --blur: blur(5px);
+    --theme-clr: cyan;
+    --fontClr: #eee;
     --titleClr: #eee;
     /* --bgApp: #031020; */
-    --boxShadow: 0 0 3px 2px #000;
+    --boxShadow: 1px 1px 3px 2px #000,
+                -1px -1px 3px 2px #000;
 }
 
 * {
@@ -20,11 +24,15 @@
 }
 
 body {
-    background-color: var(--bgDark);
+    min-height: 100vh;
+    /* background-color: var(--bgDark); */
+    background-image: url("../imgs/dark.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
     /* color: #ddd; */
     font-family: var(--appFont);
     font-size: 1.5rem; 
-    max-height: 100vh;
     margin-top: 5rem;
 }
 
@@ -37,7 +45,7 @@ h1 {
 }
     h1 span {
         color: #000;
-        background-color: cyan;
+        background-color: var(--theme-clr);
         padding: .25rem .5rem 0;
         border-radius: .75rem;
     }
@@ -46,24 +54,24 @@ h1 {
     visibility: visible;
     text-align: center;
     font-family: sans-serif;
-    color: cyan;
+    color: var(--theme-clr);
     font-size: 1rem;
 }
 
 .app {
     display: grid;
-    /* display: none; */
     place-items: center;
     text-align: center;
-    color: var(--fontClr);
     background-color: var(--bgApp);
+    backdrop-filter: var(--blur);
+    color: var(--fontClr);
     box-shadow: var(--boxShadow);
     padding: 1rem;
     max-width: 30rem;
     margin: 3rem auto 0;
 }
-    .app > * {
-        margin: 1rem;
+    .app > div {
+        margin: .5rem;
     }
     .app > div > p {
         opacity: .8;
@@ -79,12 +87,12 @@ h1 {
 #key {
     font-size: 5rem;
     color: #eee;
-    opacity: .15;
+    opacity: .20;
 }
 #keyCode {
     font-size: 2.75rem;
-    color: cyan;
-    opacity: .25;
+    color: var(--theme-clr);
+    opacity: .3;
 }
 
 #key.js-keyPressAnim  {
@@ -106,19 +114,6 @@ h1 {
     100% { transform: scale(1); }
 }
 
-/* #muteBtn {
-    padding: 1.5rem;
-    border-radius: 50%;
-    border: 1px solid #111;
-    box-shadow: 2px 2px 5px 2px #111;
-    cursor: pointer;
-    translate: transform 500ms linear;
-}
-    #muteBtn.audioOff {
-        transform: scale(.95);
-        box-shadow: 0 0 2px 2px #111;
-    } */
-
 .audio-control {
     display: flex;
     align-items: center;
@@ -126,12 +121,14 @@ h1 {
     transition: color 500ms ease-in-out;
 }
     .audio-control p {
-        opacity: .5;
+        opacity: .4;
         font-size: .8rem;
     }
     .audio-control .active {
-        color: cyan;
+        color: var(--theme-clr);
         opacity: 1;
+        text-shadow: 1px 1px 10px var(--theme-clr),
+                    -1px -1px 10px var(--theme-clr);
     }
     
 
@@ -141,7 +138,7 @@ h1 {
     padding: 4px;
     margin: .75rem;
     background-color: #000;
-    outline: 2px solid cyan;
+    outline: 2px solid var(--theme-clr);
     display: flex;
     border-radius: 10rem;
     cursor: pointer;
@@ -149,7 +146,7 @@ h1 {
     #toggleBtn #toggleHandle {
         height: 100%;
         aspect-ratio: 1 / 1;
-        background-color: cyan;
+        background-color: var(--theme-clr);
         border-radius: 10rem;
         transition: transform 200ms ease-in-out;
     }
