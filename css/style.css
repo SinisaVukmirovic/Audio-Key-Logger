@@ -4,7 +4,7 @@
     --appFont: 'Bebas Neue', sans-serif;
     --audioBtnFont: 'Audiowide', sans-serif;
     --bgDark: #171717;
-    --bgApp: rgba(0,0,0,.6);
+    --bgApp: rgba(0,0,0,.65);
     --blur: blur(5px);
     --theme-clr: cyan;
     --fontClr: #eee;
@@ -29,6 +29,11 @@ body {
     font-size: 1.5rem;
     padding-top: 5rem;
     position: relative;
+}
+
+button {
+    outline: none;
+    border: none;
 }
 
 h1 {
