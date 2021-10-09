@@ -4,7 +4,7 @@
     --appFont: 'Bebas Neue', sans-serif;
     --audioBtnFont: 'Audiowide', sans-serif;
     --bgDark: #171717;
-    --bgApp: rgba(0,0,0,.7);
+    --bgApp: rgba(0,0,0,.6);
     --blur: blur(5px);
     --theme-clr: cyan;
     --fontClr: #eee;
@@ -114,6 +114,7 @@ h1 {
     .audio-control p {
         opacity: .4;
         font-size: .8rem;
+        transition: opacity 250ms ease-in;
     }
     .audio-control .active {
         color: var(--theme-clr);
